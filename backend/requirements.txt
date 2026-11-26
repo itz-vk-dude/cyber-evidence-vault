@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+pymysql
+python-dotenv
+pydantic-settings
+pyjwt
+argon2-cffi
+cryptography
+pyotp
+qrcode[pil]
+python-multipart
+email-validator
+httpx
