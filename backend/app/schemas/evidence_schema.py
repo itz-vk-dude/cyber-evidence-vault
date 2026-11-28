@@ -5,11 +5,13 @@ from datetime import datetime
 class EvidenceBase(BaseModel):
     title: str
     description: Optional[str] = None
+    group_name: Optional[str] = None
 
 class EvidenceResponse(BaseModel):
     id: int
     title: str
     description: Optional[str]
+    group_name: Optional[str] = None
     original_filename: str
     file_size: int
     file_type: Optional[str]

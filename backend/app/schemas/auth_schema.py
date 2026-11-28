@@ -2,15 +2,24 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import datetime
 
+class RegisterRequest(BaseModel):
+    username: str
+    email: EmailStr
+    password: str
+
 class LoginRequest(BaseModel):
     username: str
     password: str
 
 class LoginResponse(BaseModel):
     requires_otp: bool = True
-    is_totp_setup: bool
+    is_totp_setup: bool = True
     temp_token: str
+    email_masked: str
     message: str
+
+class ResendOTPRequest(BaseModel):
+    temp_token: str
 
 class OTPVerifyRequest(BaseModel):
     temp_token: str

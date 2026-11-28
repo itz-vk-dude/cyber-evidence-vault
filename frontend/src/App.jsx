@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import OTPVerification from './pages/OTPVerification';
 import Dashboard from './pages/Dashboard';
 import UploadEvidence from './pages/UploadEvidence';
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         {/* Public Auth Routes */}
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/verify-otp" element={<OTPVerification />} />
 
         {/* Protected Vault Routes */}

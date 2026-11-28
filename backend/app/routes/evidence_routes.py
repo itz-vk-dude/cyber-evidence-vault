@@ -23,6 +23,7 @@ async def upload_evidence(
     file: UploadFile = File(...),
     title: str = Form(...),
     description: Optional[str] = Form(""),
+    group_name: Optional[str] = Form(None),
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
@@ -35,7 +36,8 @@ async def upload_evidence(
         user=current_user,
         file=file,
         title=title,
-        description=description or ""
+        description=description or "",
+        group_name=group_name or None
     )
     return EvidenceResponse.model_validate(evidence)
 

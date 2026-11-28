@@ -17,7 +17,8 @@ def upload_and_encrypt_evidence(
     user: User,
     file: UploadFile,
     title: str,
-    description: str = ""
+    description: str = "",
+    group_name: str = None
 ) -> Evidence:
     """
     1. Read unencrypted file bytes.
@@ -47,6 +48,7 @@ def upload_and_encrypt_evidence(
     evidence = Evidence(
         title=title or file.filename,
         description=description,
+        group_name=group_name,
         original_filename=file.filename or "unknown_evidence",
         stored_filename=stored_filename,
         file_size=file_size,

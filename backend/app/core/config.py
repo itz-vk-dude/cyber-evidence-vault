@@ -13,6 +13,23 @@ class Settings(BaseSettings):
     ADMIN_PASSWORD: str = "ChangeMe123!"
     FRONTEND_URL: str = "http://localhost:5173"
 
+    # Brevo (Sendinblue) API Configuration - Sends to ANY email/Gmail
+    BREVO_API_KEY: str = ""
+    BREVO_SENDER_EMAIL: str = "vasanthakumar17032005@gmail.com"
+    BREVO_SENDER_NAME: str = "Cyber Evidence Vault"
+
+    # Resend API Configuration
+    RESEND_API_KEY: str = ""
+    RESEND_FROM_EMAIL: str = "Cyber Evidence Vault <onboarding@resend.dev>"
+
+    # Email / SMTP Configuration (Fallback)
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USER: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_FROM_EMAIL: str = "vault-security@example.com"
+    SMTP_TLS: bool = True
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

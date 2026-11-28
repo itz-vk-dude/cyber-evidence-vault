@@ -40,7 +40,9 @@ api.interceptors.response.use(
 );
 
 export const authService = {
+  register: (username, email, password) => api.post('/api/auth/register', { username, email, password }),
   login: (username, password) => api.post('/api/auth/login', { username, password }),
+  resendOTP: (tempToken) => api.post('/api/auth/resend-otp', { temp_token: tempToken }),
   setupOTP: (tempToken) => api.get(`/api/auth/setup-otp?temp_token=${encodeURIComponent(tempToken)}`),
   enableOTP: (tempToken, secret, otpCode) => api.post('/api/auth/enable-otp', {
     temp_token: tempToken,

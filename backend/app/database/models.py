@@ -23,6 +23,7 @@ class Evidence(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), nullable=False)
     description = Column(Text, nullable=True)
+    group_name = Column(String(255), nullable=True, index=True)   # Case / folder group
     original_filename = Column(String(255), nullable=False)
     stored_filename = Column(String(255), unique=True, nullable=False)
     file_size = Column(BigInteger, nullable=False)
